@@ -19,4 +19,8 @@ jobs:
     runs-on: [self-hosted, mi-runner-local]
     steps:
       - name: Tarea de Self-Hosted
-        run: echo "Hola ejecutandose localmente en mi propia computadora!"
+        run: echo "Hola ejecutandose localmente!"
+
+      # Paso que va a fallar: intentamos invocar un comando que no existe en Windows
+      - name: Intentando ejecutar comando inexistente
+        run: sistema-fantasma --version
