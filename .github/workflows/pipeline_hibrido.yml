@@ -1,0 +1,22 @@
+name: Pipeline Hibrido y Troubleshooting
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  job_en_la_nube:
+    runs-on: ubuntu-latest # Corre en GitHub (hosted)
+    steps:
+      - name: Checkout del codigo
+        uses: actions/checkout@v4
+
+      - name: Tarea de Hosted
+        run: echo "Hola desde los servidores de GitHub (Hosted)!"
+
+  job_en_mi_maquina:
+    runs-on: [self-hosted, mi-runner-local] # Corre en tu PC con tu etiqueta personalizada
+    steps:
+      - name: Tarea de Self-Hosted
+        run: echo "Hola ejecutandose localmente en mi propia computadora!"
