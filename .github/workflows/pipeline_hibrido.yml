@@ -16,7 +16,7 @@ jobs:
         run: echo "Hola desde los servidores de GitHub (Hosted)!"
 
   job_en_mi_maquina:
-    runs-on: [self-hosted, mi-runner-falso]
+    runs-on: [self-hosted, mi-runner-local]
     steps:
       - name: Tarea de Self-Hosted
         run: echo "Hola ejecutandose localmente en mi propia computadora!"
